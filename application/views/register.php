@@ -131,14 +131,19 @@ scratch. This page gets rid of all links and provides the needed markup only.
                                 <th width="20%">จำนวนปลา</th>
                             </thead>
                             <tbody>
-                                <td class="text-center">1</td>
-                                <td>test</td>
-                                <td class="text-center">A1</td>
-                                <td>
-                                    <div class="form-group">
-                                        <input type="number" class="form-control">
-                                    </div>
-                                </td>
+                                <?php foreach($fish_list as $data) { ?>
+                                    <tr>
+                                        <td class="text-center"><?php echo $data->running_number ?></td>
+                                        <td><?php echo $data->name ?></td>
+                                        <td class="text-center"><?php echo $data->series ?></td>
+                                        <td>
+                                            <div class="form-group">
+                                                <input type="number" class="form-control">
+                                            </div>
+                                        </td>
+                                    </tr>
+                                <?php } ?>
+                                
                             </tbody>
                         </table>
                     </div>
